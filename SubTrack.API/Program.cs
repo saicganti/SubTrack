@@ -10,6 +10,8 @@ using SubTrack.API.Models;
 using SubTrack.API.Services;
 using System.Text;
 
+//Name: Saicharan Gantimahapatruni
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Database
