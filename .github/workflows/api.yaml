@@ -2,7 +2,7 @@ name: Build, Test, Deploy API
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'SubTrack.API/**'
       - 'SubTrack.Tests/**'
