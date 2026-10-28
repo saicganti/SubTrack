@@ -13,7 +13,7 @@ using System.Text;
 //Name: Saicharan Gantimahapatruni
 //October 2026
 
-// This is a API SubTrack 
+// This is a API SubTrack, which helps to track subscriptions.
 
 var builder = WebApplication.CreateBuilder(args);
 
