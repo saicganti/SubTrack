@@ -5,11 +5,28 @@ import Register from './api/context/pages/Register';
 import Dashboard from './api/context/pages/Dashboard';
 import Subscriptions from './api/context/pages/Subscriptions';
 import SubscriptionForm from './api/context/pages/SubscriptionForm';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import Spinner from './components/Spinner';
+import Header from './components/Header';
+import { Outlet } from 'react-router-dom';
 
-function Private({ children }) {
+function Private() {
   const { user, loading } = useAuth();
-  if (loading) return <p style={{ padding: 24 }}>Loading...</p>;
-  return user ? children : <Navigate to="/login" />;
+  if (loading) return <Spinner />;
+  return user ? <Outlet /> : <Navigate to="/login" />;
+}
+
+function AppLayout() {
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <Header />
+      <main className="max-w-5xl mx-auto px-4 py-8">
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default function App() {
@@ -19,10 +36,16 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Private><Dashboard /></Private>} />
-          <Route path="/subscriptions" element={<Private><Subscriptions /></Private>} />
-          <Route path="/subscriptions/new" element={<Private><SubscriptionForm /></Private>} />
-          <Route path="/subscriptions/edit/:id" element={<Private><SubscriptionForm /></Private>} />
+
+          <Route element={<Private />}>
+            <Route element={<AppLayout />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/subscriptions" element={<Subscriptions />} />
+              <Route path="/subscriptions/new" element={<SubscriptionForm />} />
+              <Route path="/subscriptions/edit/:id" element={<SubscriptionForm />} />
+            </Route>
+          </Route>
+
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>
