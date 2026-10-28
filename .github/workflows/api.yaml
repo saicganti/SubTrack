@@ -8,7 +8,7 @@ on:
       - 'SubTrack.Tests/**'
       - '.github/workflows/api.yml'
   pull_request:
-    branches: [main]
+    branches: [master]
     paths:
       - 'SubTrack.API/**'
       - 'SubTrack.Tests/**'
