@@ -2,7 +2,7 @@
 
 A full-stack subscription tracker built with ASP.NET Core, EF Core, Azure SQL, and React. Track recurring expenses, see monthly/yearly totals, and get a spending breakdown by category.
 
-**Live demo:** https://subtrack-web-saicganti.azurestaticapps.net
+**Live demo:** https://nice-river-0b8451610.3.azurestaticapps.net
 
 ## Features
 - JWT authentication with registration and login
@@ -20,9 +20,6 @@ A full-stack subscription tracker built with ASP.NET Core, EF Core, Azure SQL, a
 
 ## Architecture
 Browser → Azure Static Web Apps (React) → Azure App Service (ASP.NET Core API) → Azure SQL
-
-## Local Development
-[API and client commands]
 
 ## Design Notes
 - **Category normalized to a FK table** — eliminates update anomalies and group-by typos from a free-text category.
