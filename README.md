@@ -4,9 +4,6 @@ A full-stack subscription tracker built with ASP.NET Core, EF Core, Azure SQL, a
 
 **Live demo:** https://subtrack-web-saicganti.azurestaticapps.net
 
-## Screenshots
-[4 images inline]
-
 ## Features
 - JWT authentication with registration and login
 - Subscription CRUD with category-based organization
